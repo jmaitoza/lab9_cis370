@@ -18,3 +18,15 @@ lo CIS370
 
 The end of the pipe is only reading in 10 bytes so the first message gets cut off after the 10th character. The second message then reads the next 10 bytes which are "lo CIS370" which was cut off from the first message.
 
+
+Part 2
+
+a)  The console does not prompt me for a new command and needed to be force exited.
+    This is because if you comment out the upstream end of the pipe it will continue to wait for more data to be written.
+
+b)  The console does not print any of the text. This is because when the wait is moved the parent waits for the child but the child doesnt have anymore bits to read in.
+
+
+Part 3
+
+
