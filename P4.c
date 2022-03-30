@@ -9,8 +9,6 @@
 int main (int argc, char *argv[])
 {
   char usrInput;       
-  int nread;
-  //char silly_message[SIZE] = "Nights spent maidenless ";
   char outBuffer[SIZE];
   int fd;
   int count = 1;

@@ -21,10 +21,9 @@ int main()
         exit(1);
     }
     /* write to pipe */
-    bytesWritten = write(pipeFD[1], pkt[0], MSG_SIZE);      
+    bytesWritten = write(pipeFD[1], pkt[0], MSG_SIZE);
     bytesWritten = write(pipeFD[1], pkt[1], MSG_SIZE);
     bytesWritten = write(pipeFD[1], pkt[2], MSG_SIZE);
-
     /* read from pipe */
     for (index = 0; index < 3; index++)
     {

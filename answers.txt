@@ -18,6 +18,19 @@ lo CIS370
 
 The end of the pipe is only reading in 10 bytes so the first message gets cut off after the 10th character. The second message then reads the next 10 bytes which are "lo CIS370" which was cut off from the first message.
 
+d) 
+Msg_1: Hello CIS370
+ (Chars read: 50)
+1234567890123456789012345678901234567890
+Msg_1: Hello CIS370
+ (Chars read: -1)
+1234567890123456789012345678901234567890
+Msg_1: Hello CIS370
+ (Chars read: -1)
+1234567890123456789012345678901234567890
+[1]    7176 abort      ./p1
+
+The program tries to read from the pipe when it is empty but this causes an error and doesnt display the characters.
 
 Part 2
 
@@ -27,6 +40,5 @@ a)  The console does not prompt me for a new command and needed to be force exit
 b)  The console does not print any of the text. This is because when the wait is moved the parent waits for the child but the child doesnt have anymore bits to read in.
 
 
-Part 3
 
 

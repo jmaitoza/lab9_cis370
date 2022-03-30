@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#define SIZE 32
+#define SIZE 128
 
 int main (int argc, char *argv[])
 {
@@ -14,6 +14,11 @@ int main (int argc, char *argv[])
   int nread1, nread2;
 
   pipe(pipeFD); // set up pipe
+
+  if (argc != 3) {
+    printf("Not enough arguments!\n");
+    exit(-1);
+  }
 
   if (fork() == 0) { // Child Process
     fd2 = open(argv[2], O_WRONLY); //open output file
